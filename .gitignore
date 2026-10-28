@@ -1,0 +1,11 @@
+src/out/*
+!src/out/.gitkeep
+build/
+implements/
+roadmaps/
+.env
+.antigravitycli/
+.claude/
+webui/node_modules/
+webui/.next/
+webui/out/
