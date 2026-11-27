@@ -42,3 +42,22 @@ func TestNewAppRoutes(t *testing.T) {
 		}
 	}
 }
+
+func TestNewAppHeadRoutes(t *testing.T) {
+	app := NewApp()
+
+	for _, path := range []string{"/api/v1/hello", "/api/v1/health"} {
+		t.Run(path, func(t *testing.T) {
+			req := httptest.NewRequest("HEAD", path, nil)
+			resp, err := app.Test(req)
+			if err != nil {
+				t.Fatalf("HEAD %s failed: %v", path, err)
+			}
+			defer resp.Body.Close()
+
+			if resp.StatusCode != fiber.StatusOK {
+				t.Errorf("HEAD %s status = %d, want 200", path, resp.StatusCode)
+			}
+		})
+	}
+}
