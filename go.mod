@@ -1,4 +1,4 @@
-module templatenextjs_golangserver
+module github.com/hylmithecoder/templatenextjs_golangserver
 
 go 1.27.4
 

@@ -18,4 +18,24 @@ make run     # Run Next.js + Go dev server with reverse proxy on :8080
 make test    # Run Go unit tests
 make build   # Build Next.js static export + single Go binary (build/app)
 make clean   # Clean build artifacts
+make rename NAME=github.com/you/new_project  # Rename the Go module + all imports
 ```
+
+## Starting a New Project From This Template
+The Go module path is `github.com/hylmithecoder/templatenextjs_golangserver`. Rename it once after creating your project.
+
+**Option A: `git clone` + `make rename`**
+```bash
+git clone https://github.com/hylmithecoder/templatenextjs_golangserver new_project
+cd new_project
+make rename NAME=github.com/you/new_project   # or simply NAME=new_project
+rm -rf .git && git init                       # optional: start a fresh history
+```
+
+**Option B: [`gonew`](https://pkg.go.dev/golang.org/x/tools/cmd/gonew)**
+```bash
+go install golang.org/x/tools/cmd/gonew@latest
+gonew github.com/hylmithecoder/templatenextjs_golangserver github.com/you/new_project
+```
+
+`make rename` (`tools/rename`) updates `go.mod` and every quoted import path in the `.go` files, skipping `webui/`, `node_modules/`, `build/`, and `.git/`. It then runs `go build ./...` to check the result. You can run it again later; it always reads the current module path from `go.mod`.

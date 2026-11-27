@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"templatenextjs_golangserver/src/utils"
+	"github.com/hylmithecoder/templatenextjs_golangserver/src/utils"
 
 	"github.com/gofiber/fiber/v3"
 )

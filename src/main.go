@@ -4,8 +4,8 @@ import (
 	"embed"
 	"io/fs"
 
-	"templatenextjs_golangserver/src/server"
-	"templatenextjs_golangserver/src/utils"
+	"github.com/hylmithecoder/templatenextjs_golangserver/src/server"
+	"github.com/hylmithecoder/templatenextjs_golangserver/src/utils"
 )
 
 //go:embed all:out

@@ -9,9 +9,9 @@ import (
 	"os"
 	"strings"
 
-	"templatenextjs_golangserver/src/handlers"
-	appmiddleware "templatenextjs_golangserver/src/middleware"
-	"templatenextjs_golangserver/src/utils"
+	"github.com/hylmithecoder/templatenextjs_golangserver/src/handlers"
+	appmiddleware "github.com/hylmithecoder/templatenextjs_golangserver/src/middleware"
+	"github.com/hylmithecoder/templatenextjs_golangserver/src/utils"
 
 	"github.com/gofiber/fiber/v3"
 	"github.com/gofiber/fiber/v3/middleware/static"
